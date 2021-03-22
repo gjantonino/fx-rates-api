@@ -7,7 +7,8 @@ const Vision = require('@hapi/vision');
 const HapiSwagger = require('hapi-swagger');
 const Pack = require('../package.json');
 
-const MongoDBUrl = 'mongodb+srv://fx-api:fxratesdemo@cluster0.fug6j.mongodb.net/fxRatesDb?retryWrites=true&w=majority'
+const MongoDBUrl = process.env.NODE_ENV === 'local' ? require('../local/mongodb.js').MONGO_DB_URL : process.env.MONGO_DB_URL;
+
 
 const server = Hapi.server({
   port: process.env.PORT || 3000,

@@ -1,0 +1,1 @@
+module.exports.MONGO_DB_URL = 'mongodb+srv://fx-api:fxratesdemo@cluster0.fug6j.mongodb.net/fxRatesDb?retryWrites=true&w=majority';
