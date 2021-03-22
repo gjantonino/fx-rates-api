@@ -1,3 +1,3 @@
 module.exports = (req, h) => {
-    return "OK"
+    return h.response("OK").code(200);
 }

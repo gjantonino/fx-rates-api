@@ -12,7 +12,7 @@ exports.list = (req, h) => {
 
 exports.get = (req, h) => {
 
-  return FxRate.findById(req.params.id).exec().then((fxRate) => {
+  return FxRate.findOne({pair: req.params.pair}).exec().then((fxRate) => {
 
     if(!fxRate) return { message: 'Rate not Found' };
 
@@ -67,17 +67,5 @@ exports.update = (req, h) => {
   }).catch((err) => {
     console.log(err.message)
     return { err: err };
-  });
-}
-
-exports.remove = (req, h) => {
-
-  return FxRate.findById(req.params.id).exec(function (err, fxRate) {
-    if (err) return { dberror: err };
-    if (!fxRate) return { message: 'Rate not found' };
-    fxRate.remove(function (err) {
-      if (err) return { dberror: err };
-      return { success: true };
-    });
   });
 }
