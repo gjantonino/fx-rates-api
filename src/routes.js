@@ -8,6 +8,13 @@ module.exports = {
         server.route([
             {
                 method: 'GET',
+                path: '/',
+                handler: (req, h) => {
+                    return h.redirect('/documentation');
+                }
+            },
+            {
+                method: 'GET',
                 path: '/healthcheck',
                 options: {
                     handler: services.healthcheck,
