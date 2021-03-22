@@ -4,9 +4,9 @@
   "description": "FX Rates API",
   "main": "app.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=production node ./src/app.js",
-    "start:local": "cross-env NODE_ENV=local node ./src/app.js",
-    "test": "cross-env NODE_ENV=local nyc mocha ./tests --recursive --exit"
+    "start": "node ./src/app.js",
+    "start:local": "node ./src/app.js",
+    "test": "nyc mocha ./tests --recursive --exit"
   },
   "author": "",
   "license": "ISC",

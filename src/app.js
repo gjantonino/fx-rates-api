@@ -7,7 +7,7 @@ const Vision = require('@hapi/vision');
 const HapiSwagger = require('hapi-swagger');
 const Pack = require('../package.json');
 
-const MongoDBUrl = process.env.NODE_ENV === 'local' ? require('../local/mongodb.js').MONGO_DB_URL : process.env.MONGO_DB_URL;
+const MongoDBUrl = process.env.MONGO_DB_URL || require('../local/mongodb.js').MONGO_DB_URL;
 
 
 const server = Hapi.server({
