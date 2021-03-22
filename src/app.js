@@ -6,7 +6,7 @@ const routes = require('./routes.js');
 const MongoDBUrl = 'mongodb+srv://fx-api:fxratesdemo@cluster0.fug6j.mongodb.net/fxRatesDb?retryWrites=true&w=majority'
 
 const server = Hapi.server({
-  port: 3000,
+  port: process.env.PORT || 3000,
   host: 'localhost',
   app: {}
 });
